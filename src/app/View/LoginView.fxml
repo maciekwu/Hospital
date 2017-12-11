@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ach" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.LoginController">
+   <children>
+      <TextField fx:id="tf_nameRegister" layoutX="69.0" layoutY="170.0" />
+      <TextField fx:id="tf_lastRegister" layoutX="69.0" layoutY="225.0" />
+      <TextField fx:id="tf_loginRegister" layoutX="71.0" layoutY="292.0" />
+      <PasswordField fx:id="pf_passRegister" layoutX="71.0" layoutY="346.0" />
+      <TextField fx:id="tf_specRegister" layoutX="71.0" layoutY="403.0" visible="false" />
+      <RadioButton fx:id="rb_regDoctor" layoutX="62.0" layoutY="120.0" mnemonicParsing="false" onMouseClicked="#radioDoctor" text="Lekarz">
+         <toggleGroup>
+            <ToggleGroup fx:id="rbg_register" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rb_regPatient" layoutX="178.0" layoutY="120.0" mnemonicParsing="false" onMouseClicked="#radioPatient" selected="true" text="Pacjent" toggleGroup="$rbg_register" />
+      <Button fx:id="btn_Register" layoutX="64.0" layoutY="438.0" mnemonicParsing="false" onMouseClicked="#buttonRegister" prefHeight="50.0" prefWidth="160.0" text="Zarejestruj" />
+      <TextField fx:id="tf_login" layoutX="388.0" layoutY="199.0" />
+      <PasswordField fx:id="pf_pass" layoutX="388.0" layoutY="298.0" />
+      <Button fx:id="btn_show" layoutX="556.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#showPassLogin" text="show" />
+      <RadioButton fx:id="rb_logDoctor" layoutX="380.0" layoutY="120.0" mnemonicParsing="false" text="Lekarz">
+         <toggleGroup>
+            <ToggleGroup fx:id="rbg_login" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rb_logPatient" layoutX="496.0" layoutY="120.0" mnemonicParsing="false" selected="true" text="Pacjent" toggleGroup="$rbg_login" />
+      <Button fx:id="btn_login" layoutX="384.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#buttonLogin" prefHeight="50.0" prefWidth="160.0" text="Zaloguj" />
+      <Label fx:id="lbl_userExists" layoutX="15.0" layoutY="507.0" prefHeight="20.0" prefWidth="288.0" text="*Wybrany login już istnieje. Wybierz inny." textFill="#d70b0e" visible="false">
+         <opaqueInsets>
+            <Insets top="-4.0" />
+         </opaqueInsets>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_wrongPass" layoutX="350.0" layoutY="448.0" prefHeight="25.0" prefWidth="220.0" text="*Nieprawidłowy login lub hasło." textFill="#d70b0e" visible="false">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="389.0" layoutY="166.0" prefHeight="17.0" prefWidth="149.0" text="Login" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="388.0" layoutY="269.0" prefHeight="17.0" prefWidth="149.0" text="Password" />
+      <Label layoutX="247.0" layoutY="14.0" text="Witaj w szpitalu">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="327.0" layoutY="58.0" orientation="VERTICAL" prefHeight="440.0" prefWidth="4.0" />
+      <Label layoutX="71.0" layoutY="67.0" text="Nowy? Zarejestruj konto." />
+      <Label layoutX="374.0" layoutY="67.0" text="Masz już konto? Zaloguj się." />
+      <Label layoutX="91.0" layoutY="95.0" text="Wybierz rodzaj konta:" />
+      <Label layoutX="402.0" layoutY="95.0" text="Wybierz rodzaj konta:" />
+      <Button fx:id="btnExit" layoutX="614.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#buttonExit" text="x" textAlignment="CENTER" textFill="#948c8c">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="145.0" prefHeight="17.0" prefWidth="149.0" text="Imię *" textFill="#e20f39" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="200.0" prefHeight="17.0" prefWidth="149.0" text="Nazwisko *" textFill="#e20f39" />
+      <Button fx:id="btn_showRegister" layoutX="240.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#showPassRegister" text="show" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="261.0" prefHeight="17.0" prefWidth="149.0" text="Login *" textFill="#e20f39" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="321.0" prefHeight="17.0" prefWidth="149.0" text="Password *" textFill="#e20f39" />
+      <Label fx:id="lbl_specRegister" alignment="CENTER" contentDisplay="CENTER" layoutX="71.0" layoutY="376.0" prefHeight="17.0" prefWidth="149.0" text="Specjalizacja *" textAlignment="CENTER" textFill="#e20f39" visible="false" />
+      <TextField fx:id="tf_showPassRegister" layoutX="71.0" layoutY="346.0" visible="false" />
+      <TextField fx:id="tf_showPassLogin" layoutX="388.0" layoutY="298.0" visible="false" />
+   </children>
+</AnchorPane>

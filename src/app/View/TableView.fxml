@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="achPane_tableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="729.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.TableController">
+   <children>
+      <Button fx:id="btn_showAppointment" layoutX="120.0" layoutY="295.0" mnemonicParsing="false" onAction="#showPatientVisits" prefHeight="25.0" prefWidth="100.0" text="Wyświetl wizyty" />
+      <Button fx:id="btn_setAppointment" layoutX="120.0" layoutY="398.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#scheduleVisit" prefHeight="25.0" prefWidth="100.0" text="Umów wizytę" />
+      <Button fx:id="btn_cancelAppointment" layoutX="120.0" layoutY="346.0" mnemonicParsing="false" onAction="#deleteVisit" prefHeight="25.0" prefWidth="100.0" text="Odwołaj wizytę" />
+      <Button fx:id="btn_rescheduleAppointment" layoutX="120.0" layoutY="507.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="100.0" text="Przełóż wizytę" />
+      <Button fx:id="btn_logout" layoutX="410.0" layoutY="533.0" mnemonicParsing="false" onMouseClicked="#buttonLogout" text="Wyloguj się" />
+      <TableView fx:id="table_visits" editable="true" layoutX="120.0" layoutY="21.0" prefHeight="253.0" prefWidth="529.0">
+        <columns>
+            <TableColumn fx:id="col_AppId" prefWidth="75.0" text="id wizyty" />
+          <TableColumn fx:id="col_AppDate" prefWidth="102.0" text="Data Wizyty" />
+          <TableColumn fx:id="col_AppTime" prefWidth="102.0" text="Godzina Wizyty" />
+            <TableColumn fx:id="col_Doctor" prefWidth="62.0" text="Lekarz" />
+            <TableColumn fx:id="col_DocSpec" prefWidth="94.0" text="Specjalizacja" />
+        </columns>
+      </TableView>
+      <TextField fx:id="tf_filterSpec" layoutX="466.0" layoutY="295.0" />
+      <Label layoutX="380.0" layoutY="295.0" text="Specjalizacja:" />
+      <Label layoutX="346.0" layoutY="402.0" text="Wybierz datę:" />
+      <JFXDatePicker fx:id="dp_appDate" layoutX="455.0" layoutY="397.0" />
+      <Label layoutX="331.0" layoutY="464.0" text="Wybierz godzinę:" />
+      <JFXTimePicker fx:id="tp_appTime" layoutX="455.0" layoutY="459.0" />
+      <Separator layoutX="14.0" layoutY="333.0" prefHeight="5.0" prefWidth="701.0" />
+      <Separator layoutX="14.0" layoutY="381.0" prefHeight="5.0" prefWidth="701.0" />
+      <Separator layoutX="14.0" layoutY="494.0" prefHeight="5.0" prefWidth="701.0" />
+   </children>
+</AnchorPane>
